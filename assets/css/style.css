@@ -2,3 +2,21 @@ body{
     background-color: #f5f7fb;
 }
 
+#cu-main-heading{
+    color: white;
+    border-radius: 10px;
+    background-color: #005f73;
+    
+}
+
+#o-main-heading{
+    color: white;
+    border-radius: 10px;
+    background-color: #e85d04;    
+}
+
+#c-main-heading{
+    color: white;
+    border-radius: 10px;
+    background-color: #0077b6;
+}
