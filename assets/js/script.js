@@ -32,3 +32,13 @@ function stockClick(){
 function transactionClick(){
 
 }
+
+function addToCartClick(){
+    document.getElementById("grandTotal").innerText="RS. 750.00";
+    totalChange();
+}
+
+function totalChange(){
+    console.log("total changed");
+    document.getElementById("payButton").innerText+=" ("+document.getElementById("grandTotal").innerText+")"
+}
