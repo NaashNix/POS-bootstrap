@@ -22,6 +22,7 @@ body{
 }
 
 #o-icon{
+
 }
 
 #unitPrice{
@@ -31,4 +32,12 @@ body{
 
 #itemPrice{
     color: #2a9d8f;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+#customer, #stock, #transaction {
+    display: none;
 }
