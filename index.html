@@ -9,6 +9,7 @@
   <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.js"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./assets/css/customer.css">
   <title>POS System</title>
 
 </head>
@@ -59,9 +60,9 @@
       <div class="col-8">
         <div class="container">
           <div class="row">
-            <div class="col-3">
+            <div class="col-4">
               <!-- DropDown for customer codes -->
-              <div class="dropdown mx-4" >
+              <div class="dropdown" >
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Customer Codes
                 </button>
@@ -72,11 +73,11 @@
                 <!-- ---------------------------- -->
               </div>
             </div>
-            <div class="col-9">
+            <div class="col-8">
               <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ravindu Thilakshana">
             </div>
           </div>
-          <div class="row mt-5">
+          <div class="row mt-3">
             <div class="col-12 justify-content-md-center">
               <h3 id="o-main-heading" class="p-1 d-inline-block w-100">ORDER DETAILS</h3>
             </div>
@@ -185,59 +186,94 @@
 
   <!-- Customer Div -->
   <div id="customer">
-    <div class="container w-100 mt-2">
+    <div class="continer p-4 m-3" style="border-radius: 15px; border: #1d3557 2px solid;">
+
+
+      <!-- First Row -->
       <div class="row">
-        <div class="col m-lg-2">
-          <h1 id="main-heading">ADD CUSTOMER</h1>
-        </div>
-        <div class="col m-lg-2 ">
-          <button type="button" class="btn btn-primary btn-lg float-end">Add Customer</button>
-        </div>
+          <div class="col-3 m-1">
+              <span class="titleFont">CODE</span>
+              <!-- <input class="form-control" type="text" name="" id="customerName" placeholder="Customer Name"> -->
+              <h5 class="m-1 mx-4 p-2 w-50 d-inline-block text-center" id="customerCode"> C - 001 </h5>
+          </div>
+          <div class="col-8 m-1">
+              <!-- Right Side Column of the name -->
+              <span class="titleFont"> NAME </span>
+              <input type="text" placeholder="Customer Name" class="form-control bg-dark text-white mx-4 d-inline-block w-75">
+          </div>
       </div>
-    </div>
 
-    <div class="container p-3 mb-1" id="outer-container">
+      <!-- Second Row -->
       <div class="row">
-        <div class="col">
-          <form>
-            <div class="form-group m-3 mt-0">
-              <label for="exampleFormControlInput1">Customer Name</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ravindu Thilakshana">
-            </div>
-
-            <div class="form-group m-3">
-              <label for="exampleFormControlInput1">Mobile Number</label>
-              <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="+(94)">
-            </div>
-
-            <div class="form-group m-3">
-              <label for="exampleFormControlInput1">Customer Address</label>
-              <input type="text" class="form-control m-1" id="exampleFormControlInput1" placeholder="Address Line 01">
-              <input type="text" class="form-control m-1" id="exampleFormControlInput1" placeholder="Address Line 02">
-              <input type="text" class="form-control m-1" id="exampleFormControlInput1"
-                placeholder="Address Line 03 (Optional)">
-            </div>
-
-            <div class="container">
-              <div class="row">
-                <div class="col">
-                  <div class="form-group m-3">
-                    <label for="exampleFormControlInput1">NIC</label>
-                    <input type="text" class="form-control m-1" id="exampleFormControlInput1">
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-group m-3">
-                    <label for="exampleFormControlInput1">Postal Code</label>
-                    <input type="text" class="form-control m-1" id="exampleFormControlInput1">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
+          <div class="col m-1">
+              <span class="titleFont">NIC</span>
+              <input class="form-control d-inline-block bg-dark text-white w-75 m-3 mt-2" type="text" name="" id="customerNic" placeholder="Customer NIC">
+          </div>
+          <div class="col-6 m-1">
+              <!-- Right Side Of the NIC -->
+              <span class="titleFont">TELEPHONE</span>
+              <input class="form-control d-inline-block bg-dark text-white w-75 m-3 mt-2" type="text" name="" id="customerNic" placeholder="+(94) xxx xxxxxxx">
+          </div>
       </div>
-    </div>
+
+      <!-- Third Row -->
+      <div class="row">
+
+      </div>
+  </div>
+
+  <!-- Search bar and buttons -->
+  <div class="container p-md-3" style="background-color: #1a759f; border-radius: 15px;">
+      <div class="row">
+          <div class="col-3">
+              <input class="form-control bg-dark text-white" type="text" name="" id="searchBar" placeholder="Enter Customer Code"
+                  style="border-radius: 25px;">
+          </div>
+          <div class="col-2">
+              <button id="searchButton" class="btn btn-success p-1 w-75 shadow"
+                  style="border-radius: 15px; margin: auto;">Find</button>
+          </div>
+          <div class="col-3 mx-lg-5" id="button-group">
+              <button id="deleteButton" class="btn btn-danger text-black"> Delete</button>
+              <button id="updateButton" class="btn btn-warning">Update</button>
+              <button id="customerSave" class="btn text-black" style="background-color: #8ac926;"> Save </button>
+          </div>
+
+      </div>
+  </div>
+
+  <div class="container p-3 m-auto mt-3">
+      <table class="table table-striped table-dark">
+          <thead>
+              <tr>
+                  <th scope="col">Code</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">NIC</th>
+                  <th scope="col">Telephone</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+              </tr>
+              <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+              </tr>
+              <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
   </div>
 
   <!-- Stock Div -->
