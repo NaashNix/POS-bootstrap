@@ -42,3 +42,14 @@ function totalChange(){
     console.log("total changed");
     document.getElementById("payButton").innerText+=" ("+document.getElementById("grandTotal").innerText+")"
 }
+
+// Customer Table adding when click the save button.
+function addCustomerDataToTable(){
+    var name = $("#customerName").val();
+    var code = $("#customerCode").text();
+    var nic = $("#customerNic").val();
+    var tel = $("#customerTel").val();
+    
+    console.log(name+" "+code+" "+nic+" "+tel); 
+
+}

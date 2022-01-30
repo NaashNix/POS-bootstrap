@@ -193,13 +193,13 @@
       <div class="row">
           <div class="col-3 m-1">
               <span class="titleFont">CODE</span>
-              <!-- <input class="form-control" type="text" name="" id="customerName" placeholder="Customer Name"> -->
+              
               <h5 class="m-1 mx-4 p-2 w-50 d-inline-block text-center" id="customerCode"> C - 001 </h5>
           </div>
           <div class="col-8 m-1">
               <!-- Right Side Column of the name -->
               <span class="titleFont"> NAME </span>
-              <input type="text" placeholder="Customer Name" class="form-control bg-dark text-white mx-4 d-inline-block w-75">
+              <input type="text" id="customerName" placeholder="Customer Name" class="form-control bg-dark text-white mx-4 d-inline-block w-75">
           </div>
       </div>
 
@@ -212,7 +212,7 @@
           <div class="col-6 m-1">
               <!-- Right Side Of the NIC -->
               <span class="titleFont">TELEPHONE</span>
-              <input class="form-control d-inline-block bg-dark text-white w-75 m-3 mt-2" type="text" name="" id="customerNic" placeholder="+(94) xxx xxxxxxx">
+              <input class="form-control d-inline-block bg-dark text-white w-75 m-3 mt-2" type="text" name="" id="customerTel" placeholder="+(94) xxx xxxxxxx">
           </div>
       </div>
 
@@ -236,7 +236,7 @@
           <div class="col-3 mx-lg-5" id="button-group">
               <button id="deleteButton" class="btn btn-danger text-black"> Delete</button>
               <button id="updateButton" class="btn btn-warning">Update</button>
-              <button id="customerSave" class="btn text-black" style="background-color: #8ac926;"> Save </button>
+              <button id="customerSave" onclick="addCustomerDataToTable()" class="btn text-black" style="background-color: #8ac926;"> Save </button>
           </div>
 
       </div>
@@ -347,6 +347,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="./assets/jQuery/jquery-3.6.0.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 
