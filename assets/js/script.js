@@ -52,4 +52,12 @@ function addCustomerDataToTable(){
     
     console.log(name+" "+code+" "+nic+" "+tel); 
 
+    $("tbody").append(
+        "<tr>" + 
+        "<th scope=\"row\">"+ code +"</th>" + 
+        "<td>" + name + "</td>" + 
+        "<td>" + nic + "</td>" + 
+        "<td>" + tel + "</td>"  +
+        "</tr>"
+    );
 }
