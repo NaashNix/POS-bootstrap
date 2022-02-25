@@ -1,0 +1,25 @@
+#company-logo{
+    width: 10rem;
+}
+
+html{
+    background-color: #212529;
+    
+}
+
+#button-set{
+    margin-right: 0;
+}
+
+#customer-details-outline{
+    border: 2px white solid;
+    border-radius: 15px;
+}
+
+.poppins-font{
+    font-family: 'Poppins',sans-serif;
+}
+
+.open-sans-font{
+    font-family: 'Open-sans',sans-serif;
+}

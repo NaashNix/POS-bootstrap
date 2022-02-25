@@ -45,6 +45,9 @@ function totalChange(){
 
 // Customer Table adding when click the save button.
 function addCustomerDataToTable(){
+
+    $("#customerTable tr").off('click');
+
     var name = $("#customerName").val();
     var code = $("#customerCode").text();
     var nic = $("#customerNic").val();
@@ -55,9 +58,37 @@ function addCustomerDataToTable(){
     $("tbody").append(
         "<tr>" + 
         "<th scope=\"row\">"+ code +"</th>" + 
-        "<td>" + name + "</td>" + 
+        "<td>" + name + "</td>"  + 
         "<td>" + nic + "</td>" + 
         "<td>" + tel + "</td>"  +
         "</tr>"
     );
-}
+
+    
+    $("#customerTable tr").click(function () {
+        let custId = $(this).children(":eq(0)").text();
+        let custName = $(this).children(":eq(1)").text();
+        let custAddress = $(this).children(":eq(2)").text();
+        let custTp = $(this).children(":eq(3)").text();
+
+        console.log(custId, custName, custAddress, custTp);
+    });
+
+}   
+
+$("#customerTable tr").click(function () {
+    let custId = $(this).children(":eq(0)").text();
+    let custName = $(this).children(":eq(1)").text();
+    let custAddress = $(this).children(":eq(2)").text();
+    let custTp = $(this).children(":eq(3)").text();
+
+    console.log(custId, custName, custAddress, custTp);
+}); 
+
+var customerDB;
+var customerObject;
+
+$("#customerSave").click(function(){
+    customerObject = 
+    customerDB.unshift()
+})

@@ -1,363 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+  <title>EA POS | Dashboard</title>
+  <link rel="stylesheet" href="./assets/css/dashboard.css">
+  <link rel="stylesheet" href="./assets/bootstrap-5.1.3-dist/css/bootstrap.css">
   <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.js"></script>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="./assets/css/customer.css">
-  <title>POS System</title>
-
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark w-100" style="background-color: #264653;">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #264653 !important;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="./assets/images/POSlogo.png" style="width: 150px;" alt="">
+        <img id="company-logo" src="./assets/images/POSlogo.png" alt="">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav ">
-          <li class="nav-item pointer">
-            <a class="nav-link active" aria-current="page" id="dashboard-button" onclick="dashboardClick()">Order</a>
-          </li>
-          <li class="nav-item pointer">
-            <a class="nav-link" id="customer-button" onclick="customerClick()">Customers</a>
-          </li>
-          <li class="nav-item pointer">
-            <a class="nav-link" id="stock-button" onclick="stockClick()">Stock</a>
-          </li>
-          <li class="nav-item pointer">
-            <a class="nav-link" id="transaction-button" onclick="transactionClick()">Transactions</a>
-          </li>
-        </ul>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav poppins-font" style="font-weight: 600;">
+          <a class="nav-link active" aria-current="page" href="#">POS</a>
+          <a class="nav-link" href="#">Customers</a>
+          <a class="nav-link" href="#">Stocks</a>
+          <a class="nav-link">Reports</a>
+        </div>
+        <div class="navbar-nav" id="buttons-set">
+          <Button class="btn btn-success m-2 float-end">SALE</Button>
+          <Button class="btn btn-danger m-2">Exit</Button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <!-- Dashboard Div -->
-
-  <div class="container-fluid me-2" id="dashboard">
-    <div class="row mt-5 m-3">
-      <div class="col-8">
-        <h3 id="cu-main-heading" class="p-2 d-inline-block w-100">CUSTOMER DETAILS</h3>
-      </div>
+  <!-- content -->
+  <div class="container-fluid">
+    <div class="row" style="background-color: #212529;">
       <div class="col-4">
-        <h3 id="c-main-heading" class="p-2 d-inline-block w-100">CART</h3>
-      </div>
-    </div>
-
-    <!-- Row of the main sections -->
-    <div class="row">
-      <div class="col-8">
-        <div class="container">
-          <div class="row">
-            <div class="col-4">
-              <!-- DropDown for customer codes -->
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Customer Codes
-                </button>
-                <!-- Customer Code List goes here -->
-
-
-
-                <!-- ---------------------------- -->
-              </div>
-            </div>
-            <div class="col-8">
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ravindu Thilakshana">
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-12 justify-content-md-center">
-              <h3 id="o-main-heading" class="p-1 d-inline-block w-100">ORDER DETAILS</h3>
-            </div>
-          </div>
-          <div class="row">
-            <div class="container">
-              <div class="row">
-                <div class="col-3 mt-3">
-                  <div class="dropdown mx-4 w-100">
-                    <button class="btn btn-secondary dropdown-toggle w-100" type="button" id="dropdownMenuButton"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Item Codes
-                    </button>
-                    <!-- Item Code List goes here -->
-
-
-
-                    <!-- ---------------------------- -->
-                  </div>
-                </div>
-                <div class="col-9 p-3">
-                  <input type="text" class="form-control m-2 mt-0" id="exampleFormControlInput1"
-                    placeholder="Item Name">
+          <!-- Customer Details Fot Billing -->
+          <div class="container mt-4 p-4" id="customer-details-outline">
+            <div class="row">
+              <div class="col">
+                <div class="input-group open-sans-font" style="font-weight: 700;">
+                  <input type="text" class="form-control" placeholder="Customer Code" aria-label="Recipient's username with two button addons">
+                  <button class="btn text-white" type="button" style="background-color: #2a9d8f !important; font-weight: 500;">Search</button>
+                  <button class="btn text-white" type="button" style="background-color: #fb8500 !important; font-weight: 500;">View All</button>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-5 p-2">
-                  <div id="unitPriceOuterLine">
-                    <h6 class="position-relative text-center mb-0">
-                      Unit Price
-                    </h6>
-                    <h4 class="text-center">
-                      RS. 700.00
-                    </h4>
-                  </div>
-                </div>
-                <div class="col ">
-                  <input type="text" class="form-control m-auto mt-4" id="exampleFormControlInput1"
-                    placeholder="Req. Amount">
-                </div>
+            </div>
+            <div class="row">
+              <div class="col mt-2 open-sans-font">
+                <input type="text" class="form-control" placeholder="Customer Name" aria-label="Customer Name">  
               </div>
-              <div class="row">
-                <div class="col p-lg-5">
-                  <button type="button" class="btn btn-primary w-100" onclick="addToCartClick()">ADD TO CART</button>
-                </div>
+            </div>
+            <div class="row">
+              <div class="col mt-2 open-sans-font">
+                <input type="text" class="form-control" placeholder="Telephone Number" aria-label="Customer Telephone Number">  
               </div>
             </div>
           </div>
-        </div>
       </div>
       <div class="col-4">
         <div class="container">
-          <div class="row m-1">
-            <div class="col">
-              <table class="table table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Apple</td>
-                    <td>5</td>
-                    <td>400.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Orange</td>
-                    <td>4</td>
-                    <td>200.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Cake</td>
-                    <td>2</td>
-                    <td>350.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
           <div class="row">
             <div class="col">
-              <div id="totalOuterLine" class="p-2 m-4 text-center">
-                <h1 id="grandTotal">
-                  RS. 900.00
-                </h1>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <button id="payButton" type="button" class="btn btn-success w-100">PAY</button>
+              <div class="input-group open-sans-font" style="font-weight: 700;">
+                <input type="text" class="form-control" placeholder="Customer Code" aria-label="Recipient's username with two button addons">
+                <button class="btn text-white" type="button" style="background-color: #2a9d8f !important; font-weight: 500;">Search</button>
+                <!-- Ended from here -->
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
-  </div>
-  </div>
 
-  <!-- Customer Div -->
-  <div id="customer">
-    <div class="continer p-4 m-3" style="border-radius: 15px; border: #1d3557 2px solid;">
-
-
-      <!-- First Row -->
-      <div class="row">
-        <div class="col-3 m-1">
-          <span class="titleFont">CODE</span>
-
-          <h5 class="m-1 mx-4 p-2 w-50 d-inline-block text-center" id="customerCode"> C - 001 </h5>
-        </div>
-        <div class="col-8 m-1">
-          <!-- Right Side Column of the name -->
-          <span class="titleFont"> NAME </span>
-          <input type="text" id="customerName" placeholder="Customer Name"
-            class="form-control bg-dark text-white mx-4 d-inline-block w-75">
-        </div>
-      </div>
-
-      <!-- Second Row -->
-      <div class="row">
-        <div class="col m-1">
-          <span class="titleFont">NIC</span>
-          <input class="form-control d-inline-block bg-dark text-white w-75 m-3 mt-2" type="text" name=""
-            id="customerNic" placeholder="Customer NIC">
-        </div>
-        <div class="col-6 m-1">
-          <!-- Right Side Of the NIC -->
-          <span class="titleFont">TELEPHONE</span>
-          <input class="form-control d-inline-block bg-dark text-white w-75 m-3 mt-2" type="text" name=""
-            id="customerTel" placeholder="+(94) xxx xxxxxxx">
-        </div>
-      </div>
-
-      <!-- Third Row -->
-      <div class="row">
-
-      </div>
-    </div>
-
-    <!-- Search bar and buttons -->
-    <div class="container p-md-3" style="background-color: #1a759f; border-radius: 15px;">
-      <div class="row">
-        <div class="col-3">
-          <input class="form-control bg-dark text-white" type="text" name="" id="searchBar"
-            placeholder="Enter Customer Code" style="border-radius: 25px;">
-        </div>
-        <div class="col-2">
-          <button id="searchButton" class="btn btn-success p-1 w-75 shadow"
-            style="border-radius: 15px; margin: auto;">Find</button>
-        </div>
-        <div class="col-3 mx-lg-5" id="button-group">
-          <button id="deleteButton" class="btn btn-danger text-black"> Delete</button>
-          <button id="updateButton" class="btn btn-warning">Update</button>
-          <button id="customerSave" onclick="addCustomerDataToTable()" class="btn text-black"
-            style="background-color: #8ac926;"> Save </button>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container p-3 m-auto mt-3">
-      <table class="table table-responsive table-striped table-dark">
-        <thead>
-          <tr>
-            <th scope="col">Code</th>
-            <th scope="col">Name</th>
-            <th scope="col">NIC</th>
-            <th scope="col">Telephone</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-
-      </table>
-    </div>
-  </div>
-
-  <!-- Stock Div -->
-  <div class="container" id="stock">
-    <div class="row mt-4">
-      <div class="col">
-        <h1 id="main-headline">STOCK MANAGING</h1>
-      </div>
-      <div class="col">
-        <button type="button" class="btn btn-danger m-1 float-end">DELETE</button>
-        <button type="button" class="btn btn-success m-1 float-end">UPDATE</button>
-        <button type="button" class="btn btn-primary m-1 float-end">ADD ITEM</button>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col">
-        <table class="table table-primary table-hover">
-          <thead>
-            <tr>
-              <th scope="col">Item Code</th>
-              <th scope="col">Item Name</th>
-              <th scope="col">Price</th>
-              <th scope="col">On Hand Qty</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">I001</th>
-              <td>Apple</td>
-              <td>Rs 100.00</td>
-              <td>50</td>
-            </tr>
-            <tr>
-              <th scope="row">I002</th>
-              <td>Orange</td>
-              <td>Rs 120.00</td>
-              <td>12</td>
-            </tr>
-            <tr>
-              <th scope="row">I003</th>
-              <td>Cake</td>
-              <td>Rs 400.00</td>
-              <td>6</td>
-            </tr>
-            <tr>
-              <th scope="row">I004</th>
-              <td>Banana</td>
-              <td>Rs 160.00</td>
-              <td>40</td>
-            </tr>
-            <tr>
-              <th scope="row">I005</th>
-              <td>Stone Fruit</td>
-              <td>Rs 125.00</td>
-              <td>13</td>
-            </tr>
-            <tr>
-              <th scope="row">I006</th>
-              <td>Melons</td>
-              <td>Rs 325.00</td>
-              <td>8</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <div id="transaction">
-
-  </div>
-
-  <!-- Scripts -->
   <script src="./assets/jQuery/jquery-3.6.0.min.js"></script>
-  <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
