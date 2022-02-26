@@ -1,3 +1,8 @@
+*{
+    line-height: 1 !important;
+
+}
+
 #company-logo{
     width: 10rem;
 }
@@ -33,13 +38,14 @@ html{
     border: 2px white solid;
     border-radius: 15px;   
 }
-#item-name-label{
-    border-radius: 15px;
-    /* border: 1px solid #118ab2; */
-    background-color: #118ab2;
-}
 
 #item-details-outline{
     border: 2px solid white;
     border-radius: 15px;
+}
+
+#item-name-container{
+    background-color: #2980b9;
+    border-radius: 20px;
+    
 }
