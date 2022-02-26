@@ -42,8 +42,8 @@
 
   <!-- content -->
   <!-- This is main layout that divide cart and other objects. -->
-  <div class="container-fluid">
-    <div class="row">
+  <div class="container-fluid" style="height: calc(100vh - 10.99vh);">
+    <div class="row h-100">
       <div class="col-8 p-0 m-0" style="background-color: #212529;">
         <div class="container-fluid">
           <div class="row" style="background-color: #212529;">
@@ -143,7 +143,7 @@
                   </div>
 
                   <div class="col-4 mt-3">
-                    <form action="" class="form-floating" >
+                    <form action="" class="form-floating">
                       <input type="number" style="height: 61px !important;" class="form-control h-100" id="mfd">
                       <label for="mfd">Batch Number</label>
                     </form>
@@ -169,7 +169,8 @@
                   </div>
 
                   <div class="col-4 d-grid gap-2">
-                    <button class="btn" style="background-color: #27ae60; color: white;" type="button">ADD TO CART</button>
+                    <button class="btn" style="background-color: #27ae60; color: white;" type="button">ADD TO
+                      CART</button>
                   </div>
                 </div>
 
@@ -178,22 +179,32 @@
 
 
             </div>
+
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mt-4 p-3 open-sans-font text-center" id="shortCutPanelOutline">
+                <Button class="btn" style="background-color: #136f63; color: white;">Clear Item</Button>
+                <Button class="btn" style="background-color: #136f63; color: white;">Clear Customer</Button>
+                <Button class="btn" style="background-color: #0077b6; color: white;">Clear Cart</Button>
+                <Button class="btn" style="background-color: #c0392b; color: white;">Clear Order</Button>
+                <Button class="btn btn-danger" style="color: white;">Exit</Button>
+              </div>
+            </div>
+            <div class="col-4">
+              <div id="logoContainer" class=" mt-4 p-3 text-center">
+                <img src="./assets/images/POSlogo.png" style="width: 150px;" alt="">
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-4">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, totam sequi quia delectus labore eveniet
-        nesciunt inventore porro ducimus veritatis sit debitis aspernatur atque voluptatum dignissimos, incidunt
-        repellendus asperiores laudantium.
-        Veritatis rerum id aspernatur error facere voluptates fugiat ad. Minima possimus doloribus nemo nostrum ipsam
-        quos iste asperiores voluptates. Voluptatum nobis ut commodi minima explicabo assumenda aliquam nisi expedita
-        iusto?
-        Blanditiis expedita aliquam autem obcaecati officiis perspiciatis delectus quae rerum nam facere eum itaque
-        neque, reprehenderit est nihil odit quibusdam sunt veniam corrupti deserunt architecto ipsa. Rerum repellat sunt
-        nam.
-        Alias recusandae laudantium veniam odio, molestiae cumque obcaecati nisi quidem accusamus rerum itaque animi id
-        exercitationem doloremque cum assumenda delectus aliquam odit labore possimus officia adipisci incidunt
-        accusantium. Consequuntur, consequatur!
+      <div class="col-4" style="background-color: #33383d;">
+
+        <div class="container mt-4 p-2" id="cart">
+          
+        </div>
+
       </div>
     </div>
   </div>

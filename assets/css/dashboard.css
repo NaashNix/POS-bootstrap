@@ -54,3 +54,13 @@ html{
     background-color: #e74c3c;
     border-radius: 10px;
 }
+
+#shortCutPanelOutline{
+    border: 2px solid white;
+    border-radius: 15px;
+}
+
+#cart{
+    border-radius: 15px;
+    border: 2px solid white;
+}
