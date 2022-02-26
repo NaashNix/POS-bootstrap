@@ -47,5 +47,10 @@ html{
 #item-name-container{
     background-color: #2980b9;
     border-radius: 20px;
-    
+
+}
+
+#item-price-container{
+    background-color: #e74c3c;
+    border-radius: 10px;
 }
