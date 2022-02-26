@@ -23,3 +23,23 @@ html{
 .open-sans-font{
     font-family: 'Open-sans',sans-serif;
 }
+
+#item-cart-adding-outline{
+    border: 2px white solid;
+    border-radius: 15px;   
+}
+
+#scan-barcode-outline{
+    border: 2px white solid;
+    border-radius: 15px;   
+}
+#item-name-label{
+    border-radius: 15px;
+    /* border: 1px solid #118ab2; */
+    background-color: #118ab2;
+}
+
+#item-details-outline{
+    border: 2px solid white;
+    border-radius: 15px;
+}
