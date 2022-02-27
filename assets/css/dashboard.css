@@ -106,16 +106,45 @@ html {
     border: 2px solid white;
 }
 
-#activeBadgeOutline{
+.activeBadgeOutline{
     width: fit-content;
     border-radius: 25px;
     border: 1px solid #27ae60;
 }
 
-.thin-font{
-    font-weight: 300;
+.thin-font {
+    font-weight: 300 !important;
 }
 
 .medium-font{
     font-weight: 300;
 }
+
+.roboto-fonts{
+    font-family: 'Roboto',sans-serif;
+}
+
+
+.active-badge{
+    color: #27ae60;
+    border-radius: 25px;
+    border: 1px solid #27ae60;
+    width: fit-content;
+    height: fit-content;
+}
+
+.disabled-badge{
+    color: #c0392b;
+    border-radius: 25px;
+    border: 1px solid #c0392b;
+    width: fit-content;
+    height: fit-content;
+}
+ td span{
+     font-size: 12px;
+ }
+
+ #customerQuickMenuContainer{
+     border-radius: 15px;
+     border: 2px solid white;
+ }

@@ -11,6 +11,7 @@
   <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
   </style>
 </head>
 
@@ -25,6 +26,9 @@
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <span class="h4 roboto-fonts thin-font mt-2" style="color: white;">
+        | Customer Database
+      </span>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav poppins-font" style="font-weight: 600;">
           <a class="nav-link active" aria-current="page" href="#">POS</a>
@@ -337,36 +341,160 @@
   <!-- content -->
   <!-- This is the customer page -->
   <div class="container-fluid" style="height: calc(100vh - 10.99vh);" id="customerPage">
-      <div class="row h-75" style="background-color: #212529; color: white;">
-        <div class="col m-4 p-4" id="customerDetailsTableContainer">
-          <table class="table table-hover table-dark">
-            <thead>
-              <tr class="poppins-font h5">
-                <th class="medium-font">CID</th>
-                <th class="medium-font">NAME</th>
-                <th class="medium-font">TELEPHONE</th>
-                <th class="medium-font">ADDRESS</th>
-                <th class="medium-font">ORDERS</th>
-                <th class="medium-font">Active</th>
-              </tr>
-            </thead>
-            <tbody class="thin-font poppins-font">
-              <tr>
-                <th>C001</th>
-                <th>Robert	Patricia</th>
-                <th>070 20 53 777</th>
-                <th>Panadura</th>
-                <th>8</th>
-                <th>
-                  <div id="activeBadgeOutline" class="p-1">
-                    <span class="poppins-font" style="font-weight: 600; color: #27ae60;">Active</span>
-                  </div>
-                </th>
-              </tr>
-            </tbody>
-          </table>
+    <div class="row h-75" style="background-color: #212529; color: white;">
+      <div class="col m-4 p-4" id="customerDetailsTableContainer" style="height: 60vh; overflow-y: scroll;">
+
+        <table class="table table-hover table-dark">
+          <thead>
+            <tr class="poppins-font h5">
+              <th class="medium-font">CID</th>
+              <th class="medium-font">NAME</th>
+              <th class="medium-font">TELEPHONE</th>
+              <th class="medium-font">ADDRESS</th>
+              <th class="medium-font">ORDERS</th>
+              <th class="medium-font">Active</th>
+            </tr>
+          </thead>
+          <tbody class="roboto-fonts">
+            <tr>
+              <th>C001</th>
+              <td>Robert Patricia</th>
+              <td>070 20 53 777</th>
+              <td>Panadura</th>
+              <td>8</th>
+              <td>
+                <span class="poppins-font active-badge px-2">Active</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C002</th>
+              <td>Nimal Jayarathne</td>
+              <td>071 22 44 526</td>
+              <td>Colombo</td>
+              <td>1</td>
+              <td>
+                <span class="poppins-font disabled-badge px-2">Disabled</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C001</th>
+              <td>Robert Patricia</th>
+              <td>070 20 53 777</th>
+              <td>Panadura</th>
+              <td>8</th>
+              <td>
+                <span class="poppins-font active-badge px-2">Active</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C001</th>
+              <td>Robert Patricia</th>
+              <td>070 20 53 777</th>
+              <td>Panadura</th>
+              <td>8</th>
+              <td>
+                <span class="poppins-font active-badge px-2">Active</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C001</th>
+              <td>Robert Patricia</th>
+              <td>070 20 53 777</th>
+              <td>Panadura</th>
+              <td>8</th>
+              <td>
+                <span class="poppins-font active-badge px-2">Active</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C002</th>
+              <td>Nimal Jayarathne</td>
+              <td>071 22 44 526</td>
+              <td>Colombo</td>
+              <td>1</td>
+              <td>
+                <span class="poppins-font disabled-badge px-2">Disabled</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C002</th>
+              <td>Nimal Jayarathne</td>
+              <td>071 22 44 526</td>
+              <td>Colombo</td>
+              <td>1</td>
+              <td>
+                <span class="poppins-font disabled-badge px-2">Disabled</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C001</th>
+              <td>Robert Patricia</th>
+              <td>070 20 53 777</th>
+              <td>Panadura</th>
+              <td>8</th>
+              <td>
+                <span class="poppins-font active-badge px-2">Active</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C001</th>
+              <td>Robert Patricia</th>
+              <td>070 20 53 777</th>
+              <td>Panadura</th>
+              <td>8</th>
+              <td>
+                <span class="poppins-font active-badge px-2">Active</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C001</th>
+              <td>Robert Patricia</th>
+              <td>070 20 53 777</th>
+              <td>Panadura</th>
+              <td>8</th>
+              <td>
+                <span class="poppins-font active-badge px-2">Active</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>C001</th>
+              <td>Robert Patricia</th>
+              <td>070 20 53 777</th>
+              <td>Panadura</th>
+              <td>8</th>
+              <td>
+                <span class="poppins-font active-badge px-2">Active</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row h-25" style="background-color: #212529; color: white;">
+      <div class="col m-4 p-4" id="customerQuickMenuContainer">
+        <div class="row">
+          <div class="col px-0">
+            <Button class="btn btn-primary mx-0">+ Add Customers</Button>
+          </div>
+          <div class="col">
+            <Button class="btn btn-danger float-end mx-2">Delete</Button>
+            <Button class="btn text-white float-end mx-2" style="background-color: #bb3e03;">Modify</Button>
+          </div>
         </div>
       </div>
+    </div>
+
   </div>
 
   <script src="./assets/jQuery/jquery-3.6.0.min.js"></script>
