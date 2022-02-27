@@ -96,3 +96,26 @@ html {
     opacity: 1;
     /* Firefox */
 }
+
+#POSDashboard{
+    display: none;
+}
+
+#customerDetailsTableContainer{
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+#activeBadgeOutline{
+    width: fit-content;
+    border-radius: 25px;
+    border: 1px solid #27ae60;
+}
+
+.thin-font{
+    font-weight: 300;
+}
+
+.medium-font{
+    font-weight: 300;
+}
