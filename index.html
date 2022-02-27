@@ -200,41 +200,136 @@
         </div>
       </div>
       <div class="col-4" style="background-color: #33383d;">
+        <div class="row m-1 mt-4 pt-2" id="cart-row-overflow">
+          <div class="col">
+            <div class="container" style="height: 55vh !important; overflow-y: scroll;">
+              <table class="table table-hover text-white" >
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Price Rs.</th>
+                  </tr>
 
-        <div class="container mt-4 p-2" id="cart">
-          <table class="table table-hover text-white">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Item</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Price Rs.</th>
-              </tr>
-
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Apple Juice</td>
-                  <td>5</td>
-                  <td>896.36</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Banana Pack</td>
-                  <td>3</td>
-                  <td>600.00</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Sugar 1kg</td>
-                  <td>1</td>
-                  <td>150.00</td>
-                </tr>
-              </tbody>
-            </thead>
-          </table>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Apple Juice</td>
+                    <td>5</td>
+                    <td>896.36</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Banana Pack</td>
+                    <td>3</td>
+                    <td>600.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Sugar 1kg</td>
+                    <td>1</td>
+                    <td>150.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Apple Juice</td>
+                    <td>5</td>
+                    <td>896.36</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Banana Pack</td>
+                    <td>3</td>
+                    <td>600.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Sugar 1kg</td>
+                    <td>1</td>
+                    <td>150.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Banana Pack</td>
+                    <td>3</td>
+                    <td>600.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Sugar 1kg</td>
+                    <td>1</td>
+                    <td>150.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Apple Juice</td>
+                    <td>5</td>
+                    <td>896.36</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Banana Pack</td>
+                    <td>3</td>
+                    <td>600.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Sugar 1kg</td>
+                    <td>1</td>
+                    <td>150.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Sugar 1kg</td>
+                    <td>1</td>
+                    <td>150.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Apple Juice</td>
+                    <td>5</td>
+                    <td>896.36</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Banana Pack</td>
+                    <td>3</td>
+                    <td>600.00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Sugar 1kg</td>
+                    <td>1</td>
+                    <td>150.00</td>
+                  </tr>
+                </tbody>
+                </thead>
+              </table>
+            </div>
+          </div>
         </div>
+        <div class="row mt-4 mx-3">
+          <div class="col">
+            <div class="input-group mb-3" id="discountedAmountContainer">
+              <span class="input-group-text open-sans-font" id="discount-label-addon">Discount Amount</span>
+              <input type="text" class="form-control open-sans-font" placeholder="Discount" id="discountedAmount" aria-label="discount" aria-describedby="discount-label-addon">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3" style="height: 10vh;">
+          <div class="col">
+            <div class="d-grid gap-2 h-100">
+              
+              
+              <button class="btn btn-primary" type="button" id="mainPaymentButton">
+                <label for="mainPaymentButton" id="mainPaymentButtonLabel">PAY Rs.</label>
+                <h2 class="poppins-font" style="font-weight: 600;">8990.36</h2>
+              </button>
 
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

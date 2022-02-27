@@ -1,66 +1,98 @@
-*{
+* {
     line-height: 1 !important;
 
 }
 
-#company-logo{
+#company-logo {
     width: 10rem;
 }
 
-html{
+html {
     background-color: #212529;
-    
+
 }
 
-#button-set{
+#button-set {
     margin-right: 0;
 }
 
-#customer-details-outline{
+#customer-details-outline {
     border: 2px white solid;
     border-radius: 15px;
 }
 
-.poppins-font{
-    font-family: 'Poppins',sans-serif;
+.poppins-font {
+    font-family: 'Poppins', sans-serif;
 }
 
-.open-sans-font{
-    font-family: 'Open-sans',sans-serif;
+.open-sans-font {
+    font-family: 'Open-sans', sans-serif;
 }
 
-#item-cart-adding-outline{
+#item-cart-adding-outline {
     border: 2px white solid;
-    border-radius: 15px;   
+    border-radius: 15px;
 }
 
-#scan-barcode-outline{
+#scan-barcode-outline {
     border: 2px white solid;
-    border-radius: 15px;   
+    border-radius: 15px;
 }
 
-#item-details-outline{
+#item-details-outline {
     border: 2px solid white;
     border-radius: 15px;
 }
 
-#item-name-container{
+#item-name-container {
     background-color: #2980b9;
     border-radius: 20px;
 
 }
 
-#item-price-container{
+#item-price-container {
     background-color: #e74c3c;
     border-radius: 10px;
 }
 
-#shortCutPanelOutline{
+#shortCutPanelOutline {
     border: 2px solid white;
     border-radius: 15px;
 }
 
-#cart{
+#cart {
     border-radius: 15px;
     border: 2px solid white;
+}
+
+#cart-row-overflow {
+    /* overflow-y: scroll; */
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+#discountedAmountContainer span {
+    background-color: #d35400;
+    border-color: #d35400;
+    color: white;
+    border-right-color: white;
+}
+
+#discountedAmountContainer input {
+    background-color: #d35400;
+    border-color: #d35400;
+    color: white;
+    font-weight: 800;
+    border-left-color: white;
+}
+
+#mainPaymentButtonLabel{
+    position: relative;
+    left: -167px;
+}
+
+#discountedAmount::placeholder {
+    color: white;
+    opacity: 1;
+    /* Firefox */
 }
