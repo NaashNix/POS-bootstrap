@@ -31,8 +31,11 @@ function stockClicked(){
     document.getElementById("stockButton").setAttribute("class","nav-link active");
 }
 
-
-
+function reportClicked(){
+    initializer();
+    // document.getElementById("itemListPage").style.display="block";
+    document.getElementById("reportButton").setAttribute("class","nav-link active");
+}
 
 
 
