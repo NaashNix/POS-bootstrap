@@ -340,11 +340,12 @@
 
   <!-- content -->
   <!-- This is the customer page -->
-  <div class="container-fluid" style="height: calc(100vh - 10.99vh);" id="customerPage">
+  <div class="container-fluid" style="height: calc(100vh - 10.99vh); display: none;" id="customerPage">
     <div class="row h-75" style="background-color: #212529; color: white;">
       <div class="col m-4 p-4" id="customerDetailsTableContainer" style="height: 60vh; overflow-y: scroll;">
 
         <table class="table table-hover table-dark">
+
           <thead>
             <tr class="poppins-font h5">
               <th class="medium-font">CID</th>
@@ -480,12 +481,12 @@
         </table>
       </div>
     </div>
-
     <div class="row h-25" style="background-color: #212529; color: white;">
       <div class="col m-4 p-4" style="height: fit-content;" id="customerQuickMenuContainer">
         <div class="row">
           <div class="col px-0">
             <Button class="btn btn-primary mx-0">+ Add Customers</Button>
+            
           </div>
           <div class="col-2">
             <Button class="btn btn-danger float-end mx-2">Delete</Button>
@@ -497,7 +498,170 @@
 
   </div>
 
+  <div class="container-fluid" style="height: calc(100vh - 10.99vh);" id="itemListPage">
+<div class="row h-75" style="background-color: #212529; color: white;">
+      <div class="col m-4 p-4" id="customerDetailsTableContainer" style="height: 60vh; overflow-y: scroll;">
+
+        <table class="table table-hover table-dark">
+          
+          <thead>
+            <tr class="poppins-font h5">
+              <th class="medium-font">IID</th>
+              <th class="medium-font">ITEM</th>
+              <th class="medium-font">UNIT PRICE (Rs)</th>
+              <th class="medium-font">IN STOCK</th>
+              <th class="medium-font">BATCH NUM</th>
+              <th class="medium-font">MFD</th>
+              <th class="medium-font">EX. DATE</th>
+            </tr>
+          </thead>
+          <tbody class="roboto-fonts">
+            <tr>
+              <th>I001</th>
+              <td>Apple Juice</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Orange Barley</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06
+                <span class="disabled-badge poppins-font px-2 mx-2">EXPIRED</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Banana</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Vanilla Cake</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Necto 200ml</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Bites </th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Nelli Juice 50ml</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Sponge Cake 90g</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-01-06
+                <span class="disabled-badge px-2 mx-2 poppins-font">EXPIRED</span>
+              </td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Apple Juice</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Apple Juice</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Apple Juice</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+
+            <tr>
+              <th>I001</th>
+              <td>Apple Juice</th>
+              <td>780.00</th>
+              <td>10</th>
+              <td>100526</th>
+              <td>2020-05-06</th>
+              <td>2022-09-06</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row h-25" style="background-color: #212529; color: white;">
+      <div class="col m-4 p-4" style="height: fit-content;" id="customerQuickMenuContainer">
+        <div class="row">
+          <div class="col px-0">
+            <Button class="btn btn-primary mx-0">+ Add Item</Button>
+            
+          </div>
+          <div class="col-3">
+            <Button class="btn btn-danger float-end mx-2">Delete</Button>
+            <Button class="btn text-white float-end mx-2" style="background-color: #bb3e03;">Edit Stocks</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="./assets/jQuery/jquery-3.6.0.min.js"></script>
+
 </body>
 
 </html>
