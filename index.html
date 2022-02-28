@@ -650,7 +650,8 @@
       <div class="col m-4 p-4" style="height: fit-content;" id="customerQuickMenuContainer">
         <div class="row">
           <div class="col px-0">
-            <button class="btn btn-primary mx-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ Add Item</button>
+            <button class="btn btn-primary mx-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ Add
+              Item</button>
 
           </div>
           <div class="col-3">
@@ -662,23 +663,58 @@
     </div>
   </div>
 
-  
+
   <!-- Modal -->
   <!-- This is the modal of the item adding UI -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
         <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Add Items</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h4 class="modal-title poppins-font medium-font text-white" id="staticBackdropLabel">Add Items | </h4>
+          <h5 class="roboto-fonts medium-font px-2 mx-2 m-1 p-1" id="generatedItemCode">CODE : I001</h5>
+          <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <!-- This is content of the modal -->
+          <div class="container" id="itemAddingModal">
+            <div class="row mt-2 p-1">
+              <div class="col">
+                <div class="input-group mb-3">
+                  <span class="input-group-text w-25 poppins-font medium-font" id="itemName-addon" style="background-color: #0077b6; border: #0077b6; color: white;">Item Name</span>
+                  <input type="text" class="form-control poppins-font" placeholder="Item Name" aria-label="item name"
+                    aria-describedby="itemName-addon">
+                </div>
+              </div>
+            </div>
+
+            <div class="row p-1">
+              <div class="col">
+                <div class="input-group mb-3">
+                  <span class="input-group-text w-25 poppins-font medium-font" id="itemPriceAddon" style="background-color: #218c74; border: #218c74; color: white;">Price Rs.</span>
+                  <input type="number" class="form-control poppins-font" placeholder="Item Price" aria-label="itePriceAddon"
+                    aria-describedby="itemName-addon">
+                </div>
+              </div>
+            </div>
+
+            <div class="row p-1">
+              <div class="col">
+                <div class="input-group mb-3">
+                  <span class="input-group-text w-25 poppins-font medium-font" id="bacthNumber" style="background-color: #cd6133; border: #cd6133; color: white;">Batch Num</span>
+                  <input type="number" class="form-control poppins-font" placeholder="Batch Number" aria-label="batchNumber"
+                    aria-describedby="itemName-addon">
+                </div>
+              </div>
+            </div>
+
             
+
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">SAVE</button>
+          <button type="button" class="btn text-white" style="background-color: #136f63;">SAVE</button>
         </div>
       </div>
     </div>
