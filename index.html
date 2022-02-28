@@ -31,10 +31,10 @@
       </span>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav poppins-font" style="font-weight: 600;">
-          <a class="nav-link active" aria-current="page" href="#">POS</a>
-          <a class="nav-link" href="#">Customers</a>
-          <a class="nav-link" href="#">Stocks</a>
-          <a class="nav-link">Reports</a>
+          <a id="posButton" class="nav-link active" aria-current="page" style="cursor: pointer;" onclick="posClicked()">POS</a>
+          <a id="customerButton" class="nav-link" href="#" onclick="customerClicked()">Customers</a>
+          <a id="stockButton" class="nav-link" href="#" onclick="stockClicked()">Stocks</a>
+          <a id="reportButton" class="nav-link" onclick="reportsClicked()">Reports</a>
         </div>
         <div class="navbar-nav" id="buttons-set">
           <Button class="btn btn-success m-2 float-end">SALE</Button>
@@ -340,7 +340,7 @@
 
   <!-- content -->
   <!-- This is the customer page -->
-  <div class="container-fluid" style="height: calc(100vh - 10.99vh); display: none;" id="customerPage">
+  <div class="container-fluid" style="height: calc(100vh - 10.99vh); " id="customerPage">
     <div class="row h-75" style="background-color: #212529; color: white;">
       <div class="col m-4 p-4" id="customerDetailsTableContainer" style="height: 60vh; overflow-y: scroll;">
 
@@ -486,9 +486,9 @@
         <div class="row">
           <div class="col px-0">
             <Button class="btn btn-primary mx-0">+ Add Customers</Button>
-            
+
           </div>
-          <div class="col-2">
+          <div class="col-3">
             <Button class="btn btn-danger float-end mx-2">Delete</Button>
             <Button class="btn text-white float-end mx-2" style="background-color: #bb3e03;">Modify</Button>
           </div>
@@ -498,12 +498,14 @@
 
   </div>
 
+  <!-- content -->
+  <!-- This is the item list page -->
   <div class="container-fluid" style="height: calc(100vh - 10.99vh);" id="itemListPage">
-<div class="row h-75" style="background-color: #212529; color: white;">
+    <div class="row h-75" style="background-color: #212529; color: white;">
       <div class="col m-4 p-4" id="customerDetailsTableContainer" style="height: 60vh; overflow-y: scroll;">
 
         <table class="table table-hover table-dark">
-          
+
           <thead>
             <tr class="poppins-font h5">
               <th class="medium-font">IID</th>
@@ -639,7 +641,7 @@
               <td>2020-05-06</th>
               <td>2022-09-06</td>
             </tr>
-            
+
           </tbody>
         </table>
       </div>
@@ -648,8 +650,8 @@
       <div class="col m-4 p-4" style="height: fit-content;" id="customerQuickMenuContainer">
         <div class="row">
           <div class="col px-0">
-            <Button class="btn btn-primary mx-0">+ Add Item</Button>
-            
+            <!-- <button class="btn btn-primary mx-0" data-toggle="modal" data-target="#exampleModalCenter" aria-hidden="true">+ Add Item</button> -->
+
           </div>
           <div class="col-3">
             <Button class="btn btn-danger float-end mx-2">Delete</Button>
@@ -660,7 +662,11 @@
     </div>
   </div>
 
+
+
   <script src="./assets/jQuery/jquery-3.6.0.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
 
 </body>
 
