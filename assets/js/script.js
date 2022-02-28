@@ -5,7 +5,7 @@ $("#posButton").attr("class","nav-link active");
 function initializer(){
     document.getElementById("customerPage").style.display="none";
     document.getElementById("itemListPage").style.display="none";
-    // document.getElementById("transaction").style.display="none";
+    // document.getElementById("sample").style.display="none";
     document.getElementById("POSDashboard").style.display="none";
     document.getElementById("posButton").setAttribute("class","nav-link");
     document.getElementById("customerButton").setAttribute("class","nav-link");
@@ -32,9 +32,9 @@ function stockClicked(){
 }
 
 function reportClicked(){
-    initializer();
-    // document.getElementById("itemListPage").style.display="block";
-    document.getElementById("reportButton").setAttribute("class","nav-link active");
+    // initializer();
+    // document.getElementById("sample").style.display="block";
+    // document.getElementById("reportButton").setAttribute("class","nav-link active");
 }
 
 
