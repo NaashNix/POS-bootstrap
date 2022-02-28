@@ -668,7 +668,7 @@
   <!-- This is the modal of the item adding UI -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content bg-dark">
         <div class="modal-header">
           <h4 class="modal-title poppins-font medium-font text-white" id="staticBackdropLabel">Add Items | </h4>
@@ -679,9 +679,12 @@
           <!-- This is content of the modal -->
           <div class="container" id="itemAddingModal">
             <div class="row mt-2 p-1">
+
+
               <div class="col">
                 <div class="input-group mb-3">
-                  <span class="input-group-text w-25 poppins-font medium-font" id="itemName-addon" style="background-color: #0077b6; border: #0077b6; color: white;">Item Name</span>
+                  <span class="input-group-text w-25 poppins-font medium-font" id="itemName-addon"
+                    style="background-color: #0077b6; border: #0077b6; color: white;">Item Name</span>
                   <input type="text" class="form-control poppins-font" placeholder="Item Name" aria-label="item name"
                     aria-describedby="itemName-addon">
                 </div>
@@ -690,25 +693,22 @@
 
             <div class="row p-1">
               <div class="col">
-                <div class="input-group mb-3">
-                  <span class="input-group-text w-25 poppins-font medium-font" id="itemPriceAddon" style="background-color: #218c74; border: #218c74; color: white;">Price Rs.</span>
-                  <input type="number" class="form-control poppins-font" placeholder="Item Price" aria-label="itePriceAddon"
-                    aria-describedby="itemName-addon">
+                <div class="input-group mb-3 h-75">
+                  <span class="input-group-text w-25 poppins-font medium-font" id="itemPriceAddon"
+                    style="background-color: #218c74; border: #218c74; color: white;">Price Rs.</span>
+                  <input type="number" class="form-control poppins-font" placeholder="Item Price"
+                    aria-label="itePriceAddon" aria-describedby="itemName-addon">
                 </div>
               </div>
-            </div>
-
-            <div class="row p-1">
               <div class="col">
-                <div class="input-group mb-3">
-                  <span class="input-group-text w-25 poppins-font medium-font" id="bacthNumber" style="background-color: #cd6133; border: #cd6133; color: white;">Batch Num</span>
-                  <input type="number" class="form-control poppins-font" placeholder="Batch Number" aria-label="batchNumber"
-                    aria-describedby="itemName-addon">
+                <div class="form-floating mb-3 h-75">
+                  <input type="date" class="form-control" id="expireDate" placeholder="YYYY-MM-DD">
+                  <label for="expireDate">Expire Date</label>
                 </div>
               </div>
             </div>
 
-            
+
 
           </div>
         </div>
