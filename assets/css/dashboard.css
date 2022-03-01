@@ -151,10 +151,11 @@ td span {
     border: 2px solid white;
 }
 
-#itemAddingModal {
+.posModal {
     border-radius: 15px;
     border: 2px solid white
 }
+
 
 #generatedItemCode{
     border-radius: 20px;
@@ -162,4 +163,12 @@ td span {
     color: white;
     width: fit-content;
 
+}
+
+#generatedCustomerCode{
+    border-radius: 20px;
+    background-color: #8e44ad;
+    color: white;
+    width: fit-content;
+    
 }
