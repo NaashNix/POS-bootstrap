@@ -1,37 +1,41 @@
 initializer()
-$("#POSDashboard").css("display","block");
-$("#posButton").attr("class","nav-link active");
+$("#POSDashboard").css("display", "block");
+$("#posButton").attr("class", "nav-link active");
 
-function initializer(){
-    document.getElementById("customerPage").style.display="none";
-    document.getElementById("itemListPage").style.display="none";
+// Making Customer and Item arrys.
+const customers = [];
+const items = [];
+
+function initializer() {
+    document.getElementById("customerPage").style.display = "none";
+    document.getElementById("itemListPage").style.display = "none";
     // document.getElementById("sample").style.display="none";
-    document.getElementById("POSDashboard").style.display="none";
-    document.getElementById("posButton").setAttribute("class","nav-link");
-    document.getElementById("customerButton").setAttribute("class","nav-link");
-    document.getElementById("reportButton").setAttribute("class","nav-link");
-    document.getElementById("stockButton").setAttribute("class","nav-link");
+    document.getElementById("POSDashboard").style.display = "none";
+    document.getElementById("posButton").setAttribute("class", "nav-link");
+    document.getElementById("customerButton").setAttribute("class", "nav-link");
+    document.getElementById("reportButton").setAttribute("class", "nav-link");
+    document.getElementById("stockButton").setAttribute("class", "nav-link");
 }
 
-function customerClicked(){
+function customerClicked() {
     initializer();
-    document.getElementById("customerPage").style.display="block";
-    document.getElementById("customerButton").setAttribute("class","nav-link active");
+    document.getElementById("customerPage").style.display = "block";
+    document.getElementById("customerButton").setAttribute("class", "nav-link active");
 }
 
-function posClicked(){
+function posClicked() {
     initializer();
-    document.getElementById("POSDashboard").style.display="block";
-    document.getElementById("posButton").setAttribute("class","nav-link active");
+    document.getElementById("POSDashboard").style.display = "block";
+    document.getElementById("posButton").setAttribute("class", "nav-link active");
 }
 
-function stockClicked(){
+function stockClicked() {
     initializer();
-    document.getElementById("itemListPage").style.display="block";
-    document.getElementById("stockButton").setAttribute("class","nav-link active");
+    document.getElementById("itemListPage").style.display = "block";
+    document.getElementById("stockButton").setAttribute("class", "nav-link active");
 }
 
-function reportClicked(){
+function reportClicked() {
     // initializer();
     // document.getElementById("sample").style.display="block";
     // document.getElementById("reportButton").setAttribute("class","nav-link active");
@@ -76,7 +80,7 @@ function reportClicked(){
 //     var code = $("#customerCode").text();
 //     var nic = $("#customerNic").val();
 //     var tel = $("#customerTel").val();
-    
+
 //     console.log(name+" "+code+" "+nic+" "+tel); 
 
 //     $("tbody").append(
@@ -88,7 +92,7 @@ function reportClicked(){
 //         "</tr>"
 //     );
 
-    
+
 //     $("#customerTable tr").click(function () {
 //         let custId = $(this).children(":eq(0)").text();
 //         let custName = $(this).children(":eq(1)").text();
@@ -116,3 +120,34 @@ function reportClicked(){
 //     customerObject = 
 //     customerDB.unshift()
 // })
+
+
+// ------------------------------
+
+function customerSave() {
+
+    if ($("#customerName").val() == "") {
+        
+    }
+
+    console.log("saved");
+    let customer = {
+        name: $("#customerName").val(),
+        address: $("#customerAddress").val(),
+        telephone: $("#customerTelephone").val(),
+        email: $("#customerEmail").val(),
+        account: "Gold"
+    };
+
+    
+
+}
+
+function clearCustomerAddForm() {
+    console.log("Cleared");
+    $("#customerEmail").val("");
+    $("#customerAddress").val("");
+    $("#customerTelephone").val("");
+    $("#customerName").val("");
+}
+
