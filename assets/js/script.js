@@ -127,19 +127,31 @@ function reportClicked() {
 function customerSave() {
 
     if ($("#customerName").val() == "") {
-        
+        console.log("Please Enter Customer Name");
+
+    } else if ($("#customerAddress").val() == "") {
+        console.log("Please Enter Customer Address");
+
+    } else if ($("#customerTelephone").val()=="") {
+        console.log("Please Enter Telephone Number");
+    } else if ($("#customerEmail").val()=="") {
+        console.log("Please Enter Customer Email");
+    } else {
+        console.log("No Problem");
+        let customer = {
+            name: $("#customerName").val(),
+            address: $("#customerAddress").val(),
+            telephone: $("#customerTelephone").val(),
+            email: $("#customerEmail").val(),
+            account: "Gold"
+        };
+
+        customers.push(customer);
     }
 
-    console.log("saved");
-    let customer = {
-        name: $("#customerName").val(),
-        address: $("#customerAddress").val(),
-        telephone: $("#customerTelephone").val(),
-        email: $("#customerEmail").val(),
-        account: "Gold"
-    };
+    console.log(customers[0].name);
 
-    
+
 
 }
 
