@@ -1,6 +1,7 @@
+var z =jQuery.noConflict();
 initializer()
-$("#POSDashboard").css("display", "block");
-$("#posButton").attr("class", "nav-link active");
+z("#POSDashboard").css("display", "block");
+z("#posButton").attr("class", "nav-link active");
 
 // Making Customer and Item arrys.
 const customers = [];
@@ -41,7 +42,20 @@ function reportClicked() {
     // document.getElementById("reportButton").setAttribute("class","nav-link active");
 }
 
+function customerFormValidation(){
+    const customerName = "([A-z])\w+"
+    const customerAddress = "^[a-zA-Z0-9\s,'/-]*$"
+    const email = "/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/</>"
 
+    const cName = z("#customerName").val();
+
+    if (cName.match(cName)) {
+        
+    }else {
+        
+    }
+
+}  
 
 
 
@@ -126,23 +140,28 @@ function reportClicked() {
 
 function customerSave() {
 
-    if ($("#customerName").val() == "") {
-        console.log("Please Enter Customer Name");
+    if (z("#customerName").val() == "") {
+        // console.log("Please Enter Customer Name");
+        z("#customerName").css({
+            'border' : '3px solid red'
+         });
 
-    } else if ($("#customerAddress").val() == "") {
+        alert("Please Enter Valid Name");
+
+    } else if (z("#customerAddress").val() == "") {
         console.log("Please Enter Customer Address");
 
-    } else if ($("#customerTelephone").val()=="") {
+    } else if (z("#customerTelephone").val()=="") {
         console.log("Please Enter Telephone Number");
-    } else if ($("#customerEmail").val()=="") {
+    } else if (q("#customerEmail").val()=="") {
         console.log("Please Enter Customer Email");
     } else {
         console.log("No Problem");
         let customer = {
-            name: $("#customerName").val(),
-            address: $("#customerAddress").val(),
-            telephone: $("#customerTelephone").val(),
-            email: $("#customerEmail").val(),
+            name: q("#customerName").val(),
+            address: q("#customerAddress").val(),
+            telephone: q("#customerTelephone").val(),
+            email: q("#customerEmail").val(),
             account: "Gold"
         };
 
@@ -157,9 +176,9 @@ function customerSave() {
 
 function clearCustomerAddForm() {
     console.log("Cleared");
-    $("#customerEmail").val("");
-    $("#customerAddress").val("");
-    $("#customerTelephone").val("");
-    $("#customerName").val("");
+    q("#customerEmail").val("");
+    q("#customerAddress").val("");
+    q("#customerTelephone").val("");
+    q("#customerName").val("");
 }
 
