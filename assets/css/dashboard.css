@@ -1,6 +1,6 @@
 * {
     line-height: 1 !important;
-
+    /* box-sizing: border-box !important;*/
 }
 
 #company-logo {
@@ -117,7 +117,7 @@ html {
     font-weight: 500 !important;
 }
 
-.bold-font{
+.bold-font {
     font-weight: 800 !important;
 }
 
@@ -157,7 +157,7 @@ td span {
 }
 
 
-#generatedItemCode{
+#generatedItemCode {
     border-radius: 20px;
     background-color: #218c74;
     color: white;
@@ -165,17 +165,31 @@ td span {
 
 }
 
-#generatedCustomerCode{
+#generatedCustomerCode {
     border-radius: 20px;
     background-color: #8e44ad;
     color: white;
     width: fit-content;
-    
+
 }
 
-.registeredButton{
+.registeredButton {
     border-radius: 25px;
     border: 3px solid;
     color: white !important;
-    
+
+}
+
+.red-warning {
+    border-radius: 100% !important;
+    background-color: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 1.6%;
+    top: 23%;
 }

@@ -1,4 +1,4 @@
-var z =jQuery.noConflict();
+var z = jQuery.noConflict();
 initializer()
 z("#POSDashboard").css("display", "block");
 z("#posButton").attr("class", "nav-link active");
@@ -42,7 +42,7 @@ function reportClicked() {
     // document.getElementById("reportButton").setAttribute("class","nav-link active");
 }
 
-function customerFormValidation(){
+function customerFormValidation() {
     const customerName = "([A-z])\w+"
     const customerAddress = "^[a-zA-Z0-9\s,'/-]*$"
     const email = "/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/</>"
@@ -50,12 +50,14 @@ function customerFormValidation(){
     const cName = z("#customerName").val();
 
     if (cName.match(cName)) {
-        
-    }else {
-        
+        z("#customerName").css({ 'border': '1px solid white' });
+    } else {
+        z("#customerName").css({
+            'border-bottom': '2px solid #FFCC00'
+        });
     }
 
-}  
+}
 
 
 
@@ -141,19 +143,18 @@ function customerFormValidation(){
 function customerSave() {
 
     if (z("#customerName").val() == "") {
-        // console.log("Please Enter Customer Name");
-        z("#customerName").css({
-            'border' : '3px solid red'
-         });
 
         alert("Please Enter Valid Name");
+        z("#customerName").css({ 'border-bottom': '2px solid red' });
+        z("#customerNameContainer").append('<div id="customerNameRedWarning" class="red-warning"><span style="font-weight: 800; ">!</span></div>');
+        z("#customerNameRedWa")
 
     } else if (z("#customerAddress").val() == "") {
         console.log("Please Enter Customer Address");
 
-    } else if (z("#customerTelephone").val()=="") {
+    } else if (z("#customerTelephone").val() == "") {
         console.log("Please Enter Telephone Number");
-    } else if (q("#customerEmail").val()=="") {
+    } else if (q("#customerEmail").val() == "") {
         console.log("Please Enter Customer Email");
     } else {
         console.log("No Problem");
@@ -176,9 +177,9 @@ function customerSave() {
 
 function clearCustomerAddForm() {
     console.log("Cleared");
-    q("#customerEmail").val("");
-    q("#customerAddress").val("");
-    q("#customerTelephone").val("");
-    q("#customerName").val("");
+    z("#customerEmail").val("");
+    z("#customerAddress").val("");
+    z("#customerTelephone").val("");
+    z("#customerName").val("");
 }
 
