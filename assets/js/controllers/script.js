@@ -50,7 +50,8 @@ function customerFormValidation() {
     const cName = z("#customerName").val();
 
     if (cName.match(cName)) {
-        z("#customerName").css({ 'border': '1px solid white' });
+        // z("#customerName").css({ 'border': '1px solid white' });
+        resetInputs("#customerName","#customerNameContainer");
     } else {
         z("#customerName").css({
             'border-bottom': '2px solid #FFCC00'
@@ -59,6 +60,24 @@ function customerFormValidation() {
 
 }
 
+function sayWarning(id,container){
+    z(id).css({ 'border-bottom': '2px solid red' });
+    // z(container).append('<div class="red-warning"><span style="font-weight: 800; ">!</span></div>');
+    // z(id.css('display','block'));
+    z(id +" div:nth-child(2)").css('display','block');
+    // console.log()
+}
+
+function resetInputs(id,container) {
+    z(id).css({
+        'border':'1px solid white'
+    });
+
+     var obj = z("container div");
+     obj.remove();
+    // z(container+" div").css("display","none");
+    // document.getElementById("customerNameContainer").parentNode.removeChild("div");
+}
 
 
 // function dashboardClick(){
@@ -141,28 +160,36 @@ function customerFormValidation() {
 // ------------------------------
 
 function customerSave() {
-
+    var noProblem = false; // This false = no problem. if true there is problem.
     if (z("#customerName").val() == "") {
-
         alert("Please Enter Valid Name");
-        z("#customerName").css({ 'border-bottom': '2px solid red' });
-        z("#customerNameContainer").append('<div id="customerNameRedWarning" class="red-warning"><span style="font-weight: 800; ">!</span></div>');
-        z("#customerNameRedWa")
+        sayWarning("#customerName","#customerNameContainer");
 
-    } else if (z("#customerAddress").val() == "") {
+    }else{
+        console.log("Warning Removed");
+        resetInputs("#customerName","#customerNameContainer");
+    }
+
+    if (z("#customerAddress").val() == "") {
         console.log("Please Enter Customer Address");
 
-    } else if (z("#customerTelephone").val() == "") {
+    }else{
+        resetInputs("#customerAddress");
+    }
+
+    if (z("#customerTelephone").val() == "") {
         console.log("Please Enter Telephone Number");
-    } else if (q("#customerEmail").val() == "") {
+    }
+    if (z("#customerEmail").val() == "") {
         console.log("Please Enter Customer Email");
-    } else {
+    }
+    if (!noProblem) {
         console.log("No Problem");
         let customer = {
-            name: q("#customerName").val(),
-            address: q("#customerAddress").val(),
-            telephone: q("#customerTelephone").val(),
-            email: q("#customerEmail").val(),
+            name: z("#customerName").val(),
+            address: z("#customerAddress").val(),
+            telephone: z("#customerTelephone").val(),
+            email: z("#customerEmail").val(),
             account: "Gold"
         };
 
@@ -170,9 +197,6 @@ function customerSave() {
     }
 
     console.log(customers[0].name);
-
-
-
 }
 
 function clearCustomerAddForm() {
@@ -182,4 +206,10 @@ function clearCustomerAddForm() {
     z("#customerTelephone").val("");
     z("#customerName").val("");
 }
+
+
+
+
+
+
 
