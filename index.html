@@ -32,7 +32,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav poppins-font" style="font-weight: 600;">
           <a id="posButton" class="nav-link active" href="#" aria-current="page" onclick="posClicked()">POS</a>
-          <a id="customerButton" class="nav-link" href="#" onclick="customerClicked()">Customers</a>
+          <a id="customerButton" class="nav-link" href="#" onclick="customerClicked   ()">Customers</a>
           <a id="stockButton" class="nav-link" href="#" onclick="stockClicked()">Stocks</a>
           <a id="reportButton" class="nav-link" href="#" onclick="reportClicked()">Reports</a>
         </div>
@@ -141,14 +141,14 @@
 
                   <div class="col-4 mt-3">
                     <form action="" class="form-floating">
-                      <input type="date" class="form-control h-100" id="mfd">
+                      <input type="date" class="form-control h-100" id="mfdDashboard">
                       <label for="mfd">Manufactured Date</label>
                     </form>
                   </div>
 
                   <div class="col-4 mt-3">
                     <form action="" class="form-floating">
-                      <input type="number" style="height: 61px !important;" class="form-control h-100" id="mfd">
+                      <input type="number" style="height: 61px !important;" class="form-control h-100" id="batchNumberDashboard">
                       <label for="mfd">Batch Number</label>
                     </form>
                   </div>
@@ -340,11 +340,11 @@
 
   <!-- content -->
   <!-- This is the customer page -->
-  <div class="container-fluid" style="height: calc(100vh - 10.99vh); " id="customerPage">
+  <div class="container-fluid" style="height: calc(100vh - 10.99vh); " id="customerPage" onloadeddata="loadAllCustomers()">
     <div class="row h-75" style="background-color: #212529; color: white;">
       <div class="col m-4 p-4" id="customerDetailsTableContainer" style="height: 60vh; overflow-y: scroll;">
 
-        <table class="table table-hover table-dark">
+        <table class="table table-hover table-dark" id="customerDetailsTable">
 
           <thead>
             <tr class="poppins-font h5">
@@ -357,7 +357,7 @@
             </tr>
           </thead>
           <tbody class="roboto-fonts">
-            <tr>
+            <!--<tr>
               <th>C001</th>
               <td>Robert Patricia</th>
               <td>070 20 53 777</th>
@@ -476,7 +476,7 @@
               <td>
                 <span class="poppins-font active-badge px-2">Active</span>
               </td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
       </div>
@@ -502,7 +502,7 @@
   <!-- This is the item list page -->
   <div class="container-fluid" style="height: calc(100vh - 10.99vh);" id="itemListPage">
     <div class="row h-75" style="background-color: #212529; color: white;">
-      <div class="col m-4 p-4" id="customerDetailsTableContainer" style="height: 60vh; overflow-y: scroll;">
+      <div class="col m-4 p-4" id="itemDetailsTableContainer" style="height: 60vh; overflow-y: scroll;">
 
         <table class="table table-hover table-dark">
 
@@ -647,7 +647,7 @@
       </div>
     </div>
     <div class="row h-25" style="background-color: #212529; color: white;">
-      <div class="col m-4 p-4" style="height: fit-content;" id="customerQuickMenuContainer">
+      <div class="col m-4 p-4" style="height: fit-content;" id="itemQuickMenuContainer">
         <div class="row">
           <div class="col px-0">
             <button class="btn btn-primary mx-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ Add
@@ -685,7 +685,7 @@
                   <span class="input-group-text w-25 poppins-font medium-font" id="itemName-addon"
                     style="background-color: #0077b6; border: #0077b6; color: white;">Item Name</span>
                   <input type="text" class="form-control poppins-font" placeholder="Item Name" aria-label="item name"
-                    aria-describedby="itemName-addon">
+                    aria-describedby="itemName-addon" id="itemName">
                 </div>
               </div>
 
@@ -694,7 +694,7 @@
                   <span class="input-group-text poppins-font medium-font" id="amount-addon"
                     style="background-color: #e63946; border: #e63946; color: white; width: 35%;">Amount</span>
                   <input type="text" class="form-control poppins-font" placeholder="Amount Of Items" aria-label="amount"
-                    aria-describedby="amount-addon">
+                    aria-describedby="amount-addon" id="amountOfItem">
                 </div>
               </div>
 
@@ -706,15 +706,15 @@
                   <span class="input-group-text w-25 poppins-font medium-font" id="itemPriceAddon"
                     style="background-color: #218c74; border: #218c74; color: white;">Price Rs.</span>
                   <input type="number" class="form-control poppins-font" placeholder="Item Price"
-                    aria-label="itePriceAddon" aria-describedby="item price">
+                    aria-label="itePriceAddon" aria-describedby="item price" id="price">
                 </div>
               </div>
               <div class="col">
                 <div class="input-group mb-3">
-                  <span class="input-group-text w-25 poppins-font medium-font" id="itemPriceAddon"
+                  <span class="input-group-text w-25 poppins-font medium-font" id="itemBatchNumber"
                     style="background-color: #b71540; border: #b71540; color: white;">B. Num. </span>
                   <input type="number" class="form-control poppins-font" placeholder="Item Price"
-                    aria-label="itePriceAddon" aria-describedby="itemName-addon">
+                    aria-label="itePriceAddon" aria-describedby="itemName-addon" id="batchNumber">
                 </div>
               </div>
             </div>
@@ -742,7 +742,7 @@
         <div class="modal-footer">
           <button type="button" class="btn text-white " style="background-color: #9b2226; position: absolute; left: 4%;">Clear All </button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="poppins-font medium-font btn btn-lg text-white" style="background-color: #2980b9;"> + SAVE</button>
+          <button type="button" class="poppins-font medium-font btn btn-lg text-white" onclick="saveItem()" style="background-color: #2980b9;"> + SAVE</button>
         </div>
       </div>
     </div>
@@ -758,7 +758,7 @@
       <div class="modal-content bg-dark">
         <div class="modal-header">
           <h4 class="modal-title poppins-font medium-font text-white" id="customerBackdropLabel">Add Customers | </h4>
-          <h5 class="roboto-fonts medium-font px-2 mx-2 m-1 p-1" id="generatedCustomerCode">CODE : C001</h5>
+          <h5 class="roboto-font  s medium-font px-2 mx-2 m-1 p-1" id="generatedCustomerCode">CODE : C001</h5>
           <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">

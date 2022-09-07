@@ -3,7 +3,8 @@ initializer()
 z("#POSDashboard").css("display", "block");
 z("#posButton").attr("class", "nav-link active");
 
-// Making Customer and Item arrys.
+
+// Making Customer and Item arrays.
 const customers = [];
 const items = [];
 
@@ -51,7 +52,7 @@ function customerFormValidation() {
 
     if (cName.match(cName)) {
         // z("#customerName").css({ 'border': '1px solid white' });
-        resetInputs("#customerName","#customerNameContainer");
+        resetInputs("#customerName", "#customerNameContainer");
     } else {
         z("#customerName").css({
             'border-bottom': '2px solid #FFCC00'
@@ -60,21 +61,21 @@ function customerFormValidation() {
 
 }
 
-function sayWarning(id,container){
+function sayWarning(id, container) {
     z(id).css({ 'border-bottom': '2px solid red' });
     // z(container).append('<div class="red-warning"><span style="font-weight: 800; ">!</span></div>');
     // z(id.css('display','block'));
-    z(id +" div:nth-child(2)").css('display','block');
-    // console.log()
+    z(id + " div:nth-child(2)").css('display', 'block');
+    // console.log();
 }
 
-function resetInputs(id,container) {
+function resetInputs(id, container) {
     z(id).css({
-        'border':'1px solid white'
+        'border': '1px solid white'
     });
 
-     var obj = z("container div");
-     obj.remove();
+    var obj = z("container div");
+    obj.remove();
     // z(container+" div").css("display","none");
     // document.getElementById("customerNameContainer").parentNode.removeChild("div");
 }
@@ -161,39 +162,43 @@ function resetInputs(id,container) {
 
 function customerSave() {
     var noProblem = false; // This false = no problem. if true there is problem.
-    if (z("#customerName").val() == "") {
-        alert("Please Enter Valid Name");
-        sayWarning("#customerName","#customerNameContainer");
+    {
+        if (z("#customerName").val() == "") {
+            alert("Please Enter Valid Name");
+            sayWarning("#customerName", "#customerNameContainer");
 
-    }else{
-        console.log("Warning Removed");
-        resetInputs("#customerName","#customerNameContainer");
-    }
+        } else {
+            console.log("Warning Removed");
+            resetInputs("#customerName", "#customerNameContainer");
+        }
 
-    if (z("#customerAddress").val() == "") {
-        console.log("Please Enter Customer Address");
+        if (z("#customerAddress").val() == "") {
+            console.log("Please Enter Customer Address");
 
-    }else{
-        resetInputs("#customerAddress");
-    }
+        } else {
+            resetInputs("#customerAddress");
+        }
 
-    if (z("#customerTelephone").val() == "") {
-        console.log("Please Enter Telephone Number");
-    }
-    if (z("#customerEmail").val() == "") {
-        console.log("Please Enter Customer Email");
-    }
-    if (!noProblem) {
-        console.log("No Problem");
-        let customer = {
-            name: z("#customerName").val(),
-            address: z("#customerAddress").val(),
-            telephone: z("#customerTelephone").val(),
-            email: z("#customerEmail").val(),
-            account: "Gold"
-        };
+        if (z("#customerTelephone").val() === "") {
+            console.log("Please Enter Telephone Number");
+        }
+        if (z("#customerEmail").val() == "") {
+            console.log("Please Enter Customer Email");
+        }
+        if (!noProblem) {
+            console.log("No Problem");
+            let customer = {
+                id: z("#generatedCustomerId").text(),
+                name: z("#customerName").val(),
+                address: z("#customerAddress").val(),
+                telephone: z("#customerTelephone").val(),
+                email: z("#customerEmail").val(),
+                account: "Gold"
+            };
 
-        customers.push(customer);
+            customers.push(customer);
+            loadAllCustomers();
+        }
     }
 
     console.log(customers[0].name);
@@ -208,8 +213,45 @@ function clearCustomerAddForm() {
 }
 
 
+function saveItem() {
+    let newItem = {
+        itemName: z("#itemName").val(),
+        amount: z("#amountOfItem").val(),
+        price: z("#price").val(),
+        batchNumber: z("#batchNumber").val(),
+        expireDate: z("#expireDate").val(),
+        mfd: z("#mfd").val()
+    };
 
+    items.push(newItem);
+    console.log(items[0].itemName);
+}
 
+loadAllCustomers();
 
-
+function loadAllCustomers() {
+    customers.forEach(element => {
+        if (element == null) {
+            console.log("Loaded But Null");
+            return;
+        } else {
+            console.log("Loaded");
+            let cName = element.name;
+            let cAddress = element.address;
+            let cId = element.id;
+            let cEmail = element.email;
+            let cTelephone = element.telephone;
+            z("#customerDetailsTable>tbody").append(
+                "<tr>" +
+        "<th scope=\"row\">"+ cId +"</th>" +
+        "<td>" + cName + "</td>"  +
+        "<td>" + cTelephone + "</td>" +
+        "<td>" + cAddress + "</td>"  +
+        "<td>" + 5 + "</td>"  +
+        "<td>" + null + "</td>"  +
+        "</tr>"
+            );
+        }
+    });
+}
 
